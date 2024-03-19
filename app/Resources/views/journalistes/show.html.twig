@@ -1,0 +1,52 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Détails sur le journaliste</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ journaliste.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ journaliste.nom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ journaliste.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ journaliste.phone }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ journaliste.ville }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ journaliste.pays }}</td>
+            </tr>
+            <tr>
+                <th>Langues</th>
+                <td>{{ journaliste.langues }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a  class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('journalistes_index') }}">Retourner à la liste des journalistes</a>
+        </li>
+        <li>
+            <a  class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('journalistes_edit', { 'id': journaliste.id }) }}">Modifier </a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

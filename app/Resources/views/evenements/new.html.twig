@@ -1,0 +1,59 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Evenement creation</h1>
+
+    {{ form_start(form) }}
+          <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.titre, "Titre de l\'évênement") }}
+                                {{ form_widget(form.titre,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.details, "Détails sur l\'évênement") }}
+                                {{ form_widget(form.details,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.datedebut, "Date de tenue ou de début de l\'évênement") }}
+                                {{ form_widget(form.datedebut,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.datefin, "Date de fin de l\'évênement") }}
+                                {{ form_widget(form.datefin,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.image, "Visuel") }}
+                                {{ form_widget(form.image,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.lieu, "Lieu de l\'évênement") }}
+                                {{ form_widget(form.lieu,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.etat, "Activer pour publier") }}
+                                {{ form_widget(form.etat,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+            </div>
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('evenements_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

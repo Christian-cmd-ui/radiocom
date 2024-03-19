@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Actualites list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Titre</th>
+                <th>Soustitre</th>
+                <th>Contenu</th>
+                <th>Auteur</th>
+                <th>Etat</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actualite in actualites %}
+            <tr>
+                <td><a href="{{ path('actualites_show', { 'id': actualite.id }) }}">{{ actualite.id }}</a></td>
+                <td>{{ actualite.image }}</td>
+                <td>{{ actualite.titre }}</td>
+                <td>{{ actualite.soustitre }}</td>
+                <td>{{ actualite.contenu }}</td>
+                <td>{{ actualite.auteur }}</td>
+                <td>{{ actualite.etat }}</td>
+                <td>{% if actualite.date %}{{ actualite.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('actualites_show', { 'id': actualite.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('actualites_edit', { 'id': actualite.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('actualites_new') }}">Create a new actualite</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Thematiques </h1>
+
+    <table  class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Delais</th>
+                <th>Date de publication</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for thematique in thematiques %}
+            <tr>
+                <td><a href="{{ path('thematiques_show', { 'id': thematique.id }) }}">{{ thematique.id }}</a></td>
+                <td>{{ thematique.titre }}</td>
+                <td>{{ thematique.delais }}</td>
+                <td>{% if thematique.datepublication %}{{ thematique.datepublication|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('thematiques_show', { 'id': thematique.id }) }}">Détails</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('thematiques_edit', { 'id': thematique.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-success" href="{{ path('thematiques_new') }}">Créer une nouvelle thématique</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base_admin.html.twig' %}
+{% block body %}
+    {% if image is defined %}
+        <div style="display: flex;">
+            <div style="flex: 0 0 60%;">
+                {{ message | raw }}
+            </div>
+            {% if image is defined %}
+                <div style="flex: 1; text-align: right; margin: auto;"><img height="175" width="215" src="{{ 'https://www.cecosdaformation.com/web/'~ image }}"></div>
+            {% endif %}
+        </div>
+    {# {% else %}
+        {{ message | raw }} #}
+    {% endif %}
+    <br>
+    <p style="text-align: center;">
+
+        <a style="background: #3752a3;
+		border-radius: 5px;
+		padding: 8px;
+		color: white;
+		cursor: pointer;
+		margin-top: 5px;
+		text-decoration: none;
+		box-shadow: 0px 3px #757272;" class="link" href="{{ absolute_url(path('homepage')) }}">Visiter le site</a>
+        <a style="background: #3752a3;
+		border-radius: 5px;
+		padding: 8px;
+		color: white;
+		cursor: pointer;
+		margin-top: 5px;
+		text-decoration: none;
+		box-shadow: 0px 3px #757272;" class="link" href="https://web.whatsapp.com/send?phone=237677325343">Contactez-nous par WhatsApp</a>
+    </p>
+{% endblock body %}

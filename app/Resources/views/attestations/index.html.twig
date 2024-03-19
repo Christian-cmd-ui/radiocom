@@ -1,0 +1,39 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Attestations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Attestations</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for attestation in attestations %}
+            <tr>
+                <td><a href="{{ path('attestations_show', { 'id': attestation.id }) }}">{{ attestation.id }}</a></td>
+                <td>{% if attestation.attestations %}{{ attestation.attestations|join(', ') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('attestations_show', { 'id': attestation.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('attestations_edit', { 'id': attestation.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('attestations_new') }}">Create a new attestation</a>
+        </li>
+    </ul>
+{% endblock %}

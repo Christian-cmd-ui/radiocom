@@ -1,0 +1,56 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Liste des journalistes</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Langues</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for journaliste in journalistes %}
+            <tr>
+                <td><a href="{{ path('journalistes_show', { 'id': journaliste.id }) }}">{{ journaliste.id }}</a></td>
+                <td>{{ journaliste.nom }}</td>
+                <td>{{ journaliste.email }}</td>
+                <td>{{ journaliste.phone }}</td>
+                <td>{{ journaliste.phone }}</td>
+                <td>{{ journaliste.radio }}</td>
+                <td>{{ journaliste.programme }}</td>
+                <td>{{ journaliste.pays }}</td>
+                <td>{{ journaliste.langues }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a  class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('journalistes_show', { 'id': journaliste.id }) }}">détails</a>
+                        </li>
+                        <li>
+                            <a  class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('journalistes_edit', { 'id': journaliste.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('journalistes_new') }}">Ajouter un nouveau journaliste</a>
+        </li>
+    </ul>
+    {% block javascript %}
+            <script>
+                $('.nav-item.nav-link')[2].addClass('active');
+            </script>
+    {% endblock %}
+{% endblock %}

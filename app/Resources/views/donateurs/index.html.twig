@@ -1,0 +1,55 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Liste des Donateurs</h1>
+
+    <table class="table table-hover datatable">
+        <thead class="panel-heading">
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Sexe</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Montant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for donateur in donateurs %}
+            <tr>
+                <td><a href="{{ path('donateurs_show', { 'id': donateur.id }) }}">{{ donateur.id }}</a></td>
+                <td>{{ donateur.nom }}</td>
+                <td>{{ donateur.prenom }}</td>
+                <td>{{ donateur.sexe }}</td>
+                <td>{{ donateur.email }}</td>
+                <td>{{ donateur.phone }}</td>
+                <td>{{ donateur.montant }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('donateurs_show', { 'id': donateur.id }) }}">Détails</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('donateurs_edit', { 'id': donateur.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('donateurs_new') }}">Ajouter un donateur</a>
+        </li>
+    </ul>
+    {% block javascript %}
+    <script>
+        $('.nav-item.nav-link')[5].addClass('active');
+        $('.nav-item.nav-link')[0].removeClass('active');
+    </script>
+    {% endblock %}
+{% endblock %}

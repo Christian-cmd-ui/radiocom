@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mt-2">
+                        <h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}Missions du réseau{% endtrans %}</h4>
+                    </div>
+                    <div class="col-md-12 mt-2">
+                      <ul>
+                    <li>{% trans into app.request.locale %}Renforcement des capacités des journalistes communautaires{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Recherche de financement auprès du bailleur de fond, des formations et la protection des journalistes communautaires{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Recherche et partage d’informations sur les opportunités pour les journalistes communautaires{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Partage d’expérience sur le métier de journalisme communautaire{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Célébrations des journées internationales liées au métier{% endtrans %};</li>
+                    <li>{% trans into app.request.locale %}Publication d’articles sur le métier{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Partage des tutoriels pour les journalistes communautaires{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Communication sur la vie des radios communautaires{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Animation d’un forum des membres du réseau Facebook{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Animation d’une page Facebook publique du réseau JCS{% endtrans %} ;</li>
+                    <li>{% trans into app.request.locale %}Publication et diffusion par email d’une Newsletter bimensuelle du réseau JCS{% endtrans %}.</li>
+
+                      </ul>
+
+                </div>
+            </div>
+</div>
+ 
+    
+{% endblock %}

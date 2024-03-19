@@ -1,0 +1,32 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{ form_label(form.email, "Votre adresse e-mail") }}
+                                {{ form_errors(form.email,{'attr':{'color':'red'}}) }}  
+                                {{ form_widget(form.email,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{ form_label(form.username, "Votre login") }}
+                                {{ form_widget(form.username,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{ form_label(form.plainPassword.first, "Mot de passe ") }}
+                                {{ form_widget(form.plainPassword.first,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{ form_label(form.plainPassword.second, "Taper a nouveau le mot de passe") }}
+                                {{ form_widget(form.plainPassword.second,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>                                          
+                        <div class="col-md-12 text-center">
+                            <input class="btn btn-success" type="submit" value="{{ 'Enregistrez !'|trans }}" />
+                        </div>
+{{ form_end(form) }}

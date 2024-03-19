@@ -1,0 +1,45 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Liste des Contributions</h1>
+
+    <table  class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Etat</th>
+                <th>Contributeur</th>
+                <th>Contributions</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contribution in contributions %}
+            <tr>
+                <td><a href="{{ path('contributions_show', { 'id': contribution.id }) }}">{{ contribution.id }}</a></td>
+                <td>{{ contribution.enable }}</td>
+                <td>{{ contribution.contributeur }}</td>
+                <td>{{ contribution.contributions}}</td>
+                <td>{% if contribution.date %}{{ contribution.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('contributions_show', { 'id': contribution.id }) }}">Détails</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contributions_edit', { 'id': contribution.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contributions_new') }}">Ajouter une nouvelle contribution</a>
+        </li>
+    </ul>
+{% endblock %}

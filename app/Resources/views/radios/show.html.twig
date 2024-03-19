@@ -1,0 +1,60 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Détails sur la Radio</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ radio.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ radio.nom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ radio.description }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ radio.visuel }}</td>
+            </tr>
+            <tr>
+                <th>Frequence</th>
+                <td>{{ radio.frequence }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ radio.pays }}</td>
+            </tr>
+            <tr>
+                <th>Village</th>
+                <td>{{ radio.village }}</td>
+            </tr>
+            <tr>
+                <th>Langues</th>
+                <td>{{ radio.langues }}</td>
+            </tr>
+            <tr>
+                <th>Horaires</th>
+                <td>{{ radio.horaires }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('radios_index') }}">retourner à la liste des radios</a>
+        </li>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('radios_edit', { 'id': radio.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

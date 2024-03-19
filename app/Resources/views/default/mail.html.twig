@@ -1,0 +1,16 @@
+{% extends 'default/mailTemplate.html.twig' %}
+{% block body %}
+	<br><br>
+	Vous avez reçu une nouvelle souscription à votre newsletter;
+	Ci-dessous les informations saisies :
+	<br>
+	<table border="0" style="border-collapse: collapse;">
+		<tr>
+			<td><b>E-mail adresse</b></td>
+			<td>{{ mails.destinataire}}</td>
+		
+		</tr>
+
+	</table>
+	<br>
+{% endblock body %}

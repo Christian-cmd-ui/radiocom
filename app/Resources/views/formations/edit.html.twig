@@ -1,0 +1,67 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Modifier les informations sur une formation</h1>
+
+         {{ form_start(edit_form) }}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(edit_form.libelle, "Libellé de la formation") }}
+                                {{ form_widget(edit_form.libelle,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(edit_form.objectifs, "Objectifs de la formation") }}
+                                {{ form_widget(edit_form.objectifs,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(edit_form.duree, "Durée de la formation") }}
+                                {{ form_widget(edit_form.duree,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(edit_form.modaliteparticipation, "Modalité de participation") }}
+                                {{ form_widget(edit_form.modaliteparticipation,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(edit_form.type, "Type de formation") }}
+                                {{ form_widget(edit_form.type,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(edit_form.nombreplace, "Nombre de place") }}
+                                {{ form_widget(edit_form.nombreplace,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(edit_form.lieu, "Lieu de la formation") }}
+                                {{ form_widget(edit_form.lieu,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                      
+                    </div>
+        <input type="submit" value="Modifier" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('formations_index') }}">Retourner à la liste des formations</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    
+    
+{% endblock %}

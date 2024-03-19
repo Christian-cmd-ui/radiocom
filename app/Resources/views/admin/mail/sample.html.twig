@@ -1,0 +1,10 @@
+{% extends 'base_admin.html.twig' %}
+{% block body %}
+    {{ data['contenu']|raw }}
+    <br>
+    <p style="text-align: center;">
+        <a class="link" href="{{ absolute_url(path('test_apprenant_registration')) }}" style="">Essayer gratuitement</a>
+        <a class="link" href="{{ absolute_url(path('homepage')) }}">Visiter le site</a>
+        <a class="link" href="https://web.whatsapp.com/send?phone=237677325343" style="">Nous contacter par WhatsApp</a>
+    </p>
+{% endblock body %}

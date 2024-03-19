@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container-fluid mt-5 pt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Ressources du journaliste communautaire</h4>
+                    </div>
+                    <div class="col-md-12 mt-2"> 
+                        <div class="row">
+                        <div class="col-md-4">
+                            <a href="{{asset('ressources/Support-de-formation-des-journalistes-communautaires-dur-le-digital-UNESCO-PIDC-CECOSDA.pdf')}}">
+                                <img src="{{ asset('img/support-de-formation-cecosda-unesco-pidc-competences-digitales-journalistes-communautaires.png')}}" style="width:100%">
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{asset('ressources/The-training-material-English-digital-UNESCO-PIDC-CECOSDA.pdf')}}">
+                                <img src="{{ asset('img/The-training-material-English-digital-UNESCO-PIDC-CECOSDA.png')}}" style="width:100%">
+                            </a>
+                        </div>
+                            <div class="col-md-4">
+                                <a href="https://www.hirondelle.org/media/k2/attachments/1075_Journalisme_Desinformation_UNESCO_Fondation_Hirondelle.pdf">
+                                    <img src="{{asset('img/journalisme-fake-news-UNESCO.png')}}" style="width:100%">
+                                </a>
+                            </div>
+                            
+                        </div>  
+                    </div>    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-5 pt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Exemple de t-shirt et banderole pour un atelier</h4>
+                    </div>
+                    <div class="col-md-12 mt-2"> 
+                        <div class="row">
+                            <div class="col-md-4 d-flex align-items-center">
+                                <img src="{{ asset('img/verso.jpeg')}}" style="width:100%">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="{{ asset('img/verso1.jpeg')}}" style="width:100%">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="{{ asset('img/T-SHIRT-3 Formation-2023-1.png')}}" style="width:100%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-2">    
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="{{ asset('img/verso2.jpeg')}}" style="width:100%">
+                            </div>
+                        </div>
+                    </div>    
+                    
+                </div>
+            </div>
+        </div>
+    </div>                               
+
+{% endblock %}

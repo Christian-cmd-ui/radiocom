@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Communities radios</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Favicon -->
+    <link href="{{ asset('img/favicon.ico')}}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/logo.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/animate.min.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/calendar.css')}}"/>
+</head>
+<body>
+    
+    <!-- Topbar Start -->
+    <div class="container d-lg-block">
+        <div class="row align-items-center bg-dark px-lg-5">
+            <div class="col-lg-10 rejoindre">
+                <nav class="navbar navbar-expand-sm bg-dark p-0">   </nav>
+            </div>
+            <div class="col-lg-2 text-right  d-md-block thematique">
+                <nav class="navbar navbar-expand-sm bg-dark p-0">
+                   
+                      
+                      {#   <li class="nav-item">
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                {{ 'Connexion'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                                <a class="nav-item nav-link " href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}
+                                </a>
+                            {% else %}
+                                <a class="nav-link text-body small" href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'FOSUserBundle') }}</a>
+                            {% endif %}
+                        </li> #}
+                       
+                            <a class="nav-item nav-link small" href="https://facebook.com/reseaujcac"><small class="fab fa-facebook-f"></small></a>
+                     
+                       
+                       
+                            <a class="nav-item nav-link small" href="https://www.youtube.com/@ReseauJCAC"><small class="fab fa-youtube"></small></a>
+                        <span class="fa fa-user"></span> {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                
+                                <a class="nav-item nav-link " style="font-size: 13px;" href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}
+                                </a>
+                            {% else %}
+                                <a class="nav-link text-body small" href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'FOSUserBundle') }}</a>
+                            {% endif %}
+                    
+                </nav>
+            </div>
+        </div>
+        <div class="row align-items-center bg-white py-3 px-lg-5">
+            <div class="col-lg-4">
+                <a href="{{ path('homepage') }}" class="navbar-brand p-0 d-none d-lg-block">
+                <img src="{{ asset('img/logo-radio.jpg')}}" style="width:50%"></a>
+           </div>
+            <div class="col-lg-8 text-center text-lg-right">
+                 <i class="nom-site">{% trans into app.request.locale %}Réseau des journalistes communautaires d’Afrique centrale {% endtrans %}
+                <br></i> 
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
+            <a href="{{path('homepage')}}" class="navbar-brand d-block d-lg-none">
+         <img src="{{ asset('img/logo-radio.jpg') }}" style="width:100%"> </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+             {% block menu %}
+           <div class="container collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
+                 <div class="navbar-nav mr-auto py-0">
+                    <a href="{{path('homepage')}}" class="nav-item nav-link ">Accueil</a>
+                   
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">A propos</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="{{path('historique')}}" class="dropdown-item">Historique</a>
+                            <a href="{{path('objectifs')}}" class="dropdown-item">Objectifs</a>
+                            <a href="{{path('missions')}}" class="dropdown-item">Missions</a>
+                            <a href="{{path('equipe')}}" class="dropdown-item">Equipe</a>
+                            <a href="{{path('radiosmembre')}}" class="dropdown-item">Nos radios</a>                    
+                            <a href="{{path('journalistes')}}" class="dropdown-item">Nos journalistes</a>                  
+                        </div>
+                    </div> 
+                    <a href="{{path('opportunites')}}" class="nav-item nav-link">Opportunit&eacute;s</a>
+                    <a href="{{path('activites')}}" class="nav-link nav-link ">Activit&eacute;s</a>
+                    <a href="{{path('forum')}}" class="nav-item nav-link">Forum</a>
+                    <a href="{{path('partenaires')}}" class="nav-item nav-link">Partenaires</a>
+                    <div class="nav-item dropdown">
+                            <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">Nous rejoindre</a>
+                            <div class="dropdown-menu rounded-0 m-0" >
+                                <a class="dropdown-item" href="{{path('devenirmembre')}}">Ajouter votre radio</a>
+                                <a class="dropdown-item" href="{{path('ajouterjournaliste')}}">Devenir un journaliste membre</a>
+                            </div>
+                        </div>
+                            
+              
+                </div>
+           
+            </div>
+
+            {% endblock %}
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <body>
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+        
+ <!-- Footer Start -->
+    
+    <div class="container-fluid bg-dark pt-5 px-sm-3 px-md-5 mt-5">
+        <div class="row py-4">
+            <div class="col-lg-6 col-md-6 mb-5">
+                <h5 class="mb-4 text-white text-uppercase font-weight-bold">Nous retrouver</h5>
+                <p class="font-weight-medium"><i class="fa fa-map-marker-alt mr-2"></i>Yaoundé, Montée-jouvence, Cameroun</p>
+                <p class="font-weight-medium"><i class="fa fa-phone-alt mr-2"></i>(+237) 677 046 788</p>
+                <p class="font-weight-medium"><i class="fa fa-envelope mr-2"></i>reseaujcac@gmail.com</p>
+                <h6 class="mt-4 mb-3 text-white text-uppercase font-weight-bold">Nous suivre</h6>
+                <div class="d-flex justify-content-start">
+                    
+                    <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="https://facebook.com/reseaujcac"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-secondary btn-lg-square" href="https://www.youtube.com/@ReseauJCAC"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-5">
+                <h5 class="mb-4 text-white text-uppercase font-weight-bold">Partenaires</h5>
+                <div class="mb-3">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""></a>
+                        <a class="nav-item nav-link" href="http://cecosda.org">CECOSDA</a>
+                    </div>
+                    <a class="small text-body text-uppercase font-weight-medium" href="">Centre pour la communication et le développement durable pour tous</a>
+                </div>
+                <div class="mb-3">
+                    <div class="mb-2">
+                       <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""></a>
+                        <a class="nav-item nav-link" href="http://scribo.cm">SCRIBO</a>
+                    </div>
+                    <a class="small text-body text-uppercase font-weight-medium" href="">Agence de Community Management</a>
+                </div>
+             
+            </div>
+           
+        </div>
+    </div>
+    <div class="container-fluid py-4 px-sm-3 px-md-5" style="background: #111111;">
+        <p class="m-0 text-center">&copy; <a href="#">Réseau des radios communautaires</a>. All Rights Reserved. 
+		
+		<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+		Design by <a href="http://scribo.cm">SCRIBO SARL</a></p>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    {% block JavaScript %}
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('lib/easing/easing.min.js')}}"></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('js/logo.js')}}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ asset('js/main.js')}}"></script> 
+    {% endblock %}
+
+    
+</body>
+
+</html>

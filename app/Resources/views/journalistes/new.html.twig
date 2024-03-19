@@ -1,0 +1,84 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+  <header class="panel-heading">
+                    <h1 class="panel-title">Enregistrement d'un nouveau journaliste</h1>
+                </header>
+                <div class="panel-body purple" style="margin-bottom: 8%; padding:3px">
+                    {{ form_errors(form) }}
+                    {{ form_start(form, {'method': 'post', 'action': path('journalistes_new'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.nom, "Nom du journaliste") }}
+                                {{ form_widget(form.nom,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.email, "Adresse email") }}
+                                {{ form_widget(form.email,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.phone, "Numéro de téléphone") }}
+                                {{ form_widget(form.phone,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.ville, "Ville de résidence") }}
+                                {{ form_widget(form.ville,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.pays, "Pays de résidence") }}
+                                {{ form_widget(form.pays,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.radio, "Nom de votre radio") }}
+                                {{ form_widget(form.radio,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.programme, "Le programme que vous animez au sein de cette radio") }}
+                                {{ form_widget(form.programme,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.langues, "Langue(s) parlée(s)") }}
+                                {{ form_widget(form.langues,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <table class="pull-right mt-3">
+                        <tr>
+                            <td>
+                                <input class="ladda-button btn-custom ladda-button-demo btn btn-primary" type="submit" value="Enregistrer" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('journalistes_index', { type : 1}) }}">Retour à la liste des journalistes
+                                </a>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                    {{ form_end(form) }}
+
+                </div>
+    <ul>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('journalistes_index') }}">Retour à la liste des journalistes</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,283 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+
+form, input, input[type=submit] {
+    font-size: 14px;
+    
+}
+</style>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    
+                    <div class="col-lg-12">
+				<div class="section-title mt-2">
+					<h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}A propos du forum{% endtrans %}</h4>
+
+				</div>
+				<div class="col-md-12 text-justify">{% trans into app.request.locale %}Le Forum thématique du réseau JCAC mobilise la sensibilisation, le partage des connaissances, le débat et l'apprentissage mutuel sur toute une série de questions touchant à la vie des radios communautaires, au métier de journaliste communautaire et leur impact sur le développement durable des communautés locales. Les discussions sont facilitées et modérées par le secrétariat du réseau supervisé par le Centre pour la communication et le développement durable pour tous{% endtrans %} (<a href="http://cecosda.org">CECOSDA</a>).
+				</div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a class="btn btn-info accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#comment">{% trans into app.request.locale %}Comment &ccedil;a marche ?{% endtrans %}
+								</a>
+							</h4>
+							<div id="comment" class="panel-collapse collapse in text-justify">
+								{% trans into app.request.locale %}Les discussions thématiques sont ouvertes une fois par mois, dès le 05 de chaque mois. Les personnes inscrites sur le forum reçoivent la notification par email ou par téléphone et ont 14 jours pour envoyer leur contribution par email à l'adresse{% endtrans %}
+								<a href="mailto:reseaujcac@gmail.com">reseaujcac@gmail.com</a> {% trans into app.request.locale %}Après dix jours, la thématique est fermée pour permettre au secrétariat de compiler les contributions et de le partager avec les acteurs du secteur. Les contributions  portant les noms et les organisations les personnes ayant contribuées sont partagées par email  dans un large groupe de partenaires internationaux et disponible en ligne pour référence.{% endtrans %}
+
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a class="btn btn-info accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#qui">{% trans into app.request.locale %}Qui peut contribuer ?{% endtrans %}</a>
+							</h4>
+							<div id="qui" class="panel-collapse collapse in text-justify">{% trans into app.request.locale %}Tous les acteurs intéressés par le journalisme communautaire et les membres du forum peuvent contribuer en envoyant un article en relation avec la thématique ouverte. L’article devra décrire les faits et la situation qui prévaut dans son contexte avec des sources des données, et une ou deux  photos idéalement. Les articles sont signés avec mention de sa radio ou de son organisation.{% endtrans %}
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a class="btn btn-info accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#pourquoi">{% trans into app.request.locale %}Pourquoi contribuer ?{% endtrans %}</a>
+							</h4>
+							<div id="pourquoi" class="panel-collapse collapse in text-justify">{% trans into app.request.locale %}Lorsque vous contribuez en envoyant vos contributions à une thématique et en partageant vos réalités sur le terrain vous gagnez en visibilité auprès des partenaires et bailleurs de fonds pour la participation aux conférences internationales. Vous contribuez également à la valorisation du journalisme communautaire. A travers vos contributions, votre radio peut également recevoir des appuis en matière de publicité ou de subvention. Le rapport des contributions est diffusé en ligne avec une grande visibilité et distribué par email à plus de 1000 contacts institutionnels. Les journalistes qui contribuent sont également mis en priorité pour les formations financées par les bailleurs de fonds.{% endtrans %}</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="section-title mt-2">
+                        <h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}Thématiques ouvertes{% endtrans %}</h4>
+                        
+                    </div>
+                    {% set i = 1 %}
+                    {% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {% for msg in app.session.flashBag.get('info') %}
+                            <div class="alert alert-success">
+                                {{ msg }}
+                            </div>
+                             {% endfor %}
+                        
+                        <p>{% trans into app.request.locale %}Pour contribuer{% endtrans %}<a class="creer">{% trans into app.request.locale %}creez votre compte!{% endtrans %}</a> {% trans into app.request.locale %}ou Si vous avez un compte{% endtrans %} <a class="connect" >{% trans into app.request.locale %}connectez-vous{% endtrans %}</a></p>
+                            
+                            {{ form_start(userform, {'method': 'post',  'attr': {'class': 'fos_user_registration_register', 'id': 'register' }}) }}
+                                                <div class="row" >                                                
+                                                    <div class="col-md-3 form-group">
+                                                        {{ form_label(userform.email, "Votre adresse e-mail") }}
+                                                        {{ form_errors(userform.email,{'attr':{'color':'red'}}) }}  
+                                                        {{ form_widget(userform.email,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                                                    </div>
+                                               
+                                             
+                                                    <div class=" col-md-3 form-group">
+                                                        {{ form_label(userform.username, "Votre login") }}
+                                                        {{ form_widget(userform.username,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                                                    </div>
+                                             
+                                               
+                                                    <div class="col-md-3 form-group">
+                                                        {{ form_label(userform.plainPassword.first, "Mot de passe ") }}
+                                                        {{ form_widget(userform.plainPassword.first,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                                                    </div>
+                                               
+                                                
+                                                    <div class="col-md-3 form-group">
+                                                        {{ form_label(userform.plainPassword.second, "meme mot de passe") }}
+                                                        {{ form_widget(userform.plainPassword.second,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                                                    </div>
+                                                                                        
+                                                <div class="col-md-3">
+                                                    <input class="btn btn-success" type="submit" value="{{ 'Enregistrez !'|trans }}" />
+                                                </div>
+                                                </div>
+                        {{ form_end(userform) }}
+                        
+                        
+                            <form method="post" action="{{ path('fos_user_security_check')}}" id="login">
+                                <div class="row">
+                                    {% if csrf_token %}
+                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                                    {% endif %}
+                                    <div class="col-md-4 form-group">
+                                        <label for="username">{{ 'Nom d\'utilisateur'|trans }}</label>
+                                        <input class="form-control" type="text" id="username" name="_username" required="required" autocomplete="username" />
+                        
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="password">{{ 'Password'|trans }}</label>
+                                        <input type="password" class="form-control" id="password" name="_password" required="required" autocomplete="current-password" />
+                        
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        <label for="password" style="margin-top: 44px;"></label>
+                                        <input class="btn btn-success" type="submit" id="_submit" name="_submit" value="{{ 'Connexion'|trans }}" />
+                               
+                                    </div>
+                                </div>
+                            </form>
+                    {% endif %}
+                  {% for thematique in thematiques %}
+                      <div class="row">
+                            <div class="col-md-2 mt-1">
+                                <img src="{{asset('img/image-fake-news.jpeg')}}" style="width:100%">
+                            </div>
+                            <div class="col-md-10 mt-1" style="background-color:white" >
+                            <p style="font-weight: 600;font-size: 20px;">{{i}}. {{thematique.titre}} </p>
+                            
+                     
+                   
+                            
+                            {% for contribution in contributions %}
+                                {% if contribution.theme.id == thematique.id and contribution.enable %}
+                            <div class="dropdown">
+                            <p>{{ contribution.contributions }}</p>
+                            </div>
+                            
+                                {% endif %}
+                                
+                            {% endfor %}
+                               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            
+                          <form  method="post" enctype="multipart/form-data">
+                                        <div class="row ">
+                                                        <div id="message" class="alert alert-success" style="display:none">
+                                                        
+                                                        </div>
+                                                        <div class="col-md-6" style="display:none">
+                                                            <div class="form-group">
+                                                                <label for="appbundle_contributions_theme" class="required">Theme</label>
+                                                                <select id="appbundle_contributions_theme" name="appbundle_contributions[theme]" class="form-control" required="required">
+                                                                    <option value="{{thematique.id}}">{{thematique.titre}}</option>
+                                                                
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6" style="display:none">
+                                                            <div class="form-group">
+                                                                <label for="appbundle_contributions_contributeur" class="required">Contributeur</label>
+                                                                <input type="text" id="appbundle_contributions_contributeur" name="appbundle_contributions[contributeur]" required="required" class="form-control" readonly="readonly" value="{{app.user.username}}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="appbundle_contributions_contributions" class="required">Contributions</label>
+                                                                <textarea id="appbundle_contributions_contributions" name="appbundle_contributions[contributions]" required="required" class="form-control"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="appbundle_contributions_visuel">Insérer votre image</label>
+                                                                <input type="file" id="appbundle_contributions_visuel" name="appbundle_contributions[visuel]" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6" style="display:none">
+                                                            <div class="form-group">
+                                                                <label class="required">Date</label>
+                                                                <input type="date" id="appbunle_contributions_date" name="appbundle_contributions[date]" class="form-control"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6" style="display:none">
+                                                            <div class="form-group">
+                                                                <label for="appbundle_contributions_enable">Enable</label>
+                                                                <input type="checkbox" id="appbundle_contributions_enable" name="appbundle_contributions[enable]" value="1">
+                                                            </div>
+                                                        </div>
+                                                      
+                                                    </div>
+                                        <a class="btn btn-success" onclick="soumission(this)">Contribuer</a>
+                                    <input type="hidden" id="appbundle_contributions__token" name="appbundle_contributions[_token]" value="eS1ycajgVUt0VACf_EiDfhglCCDiazjBi5QHJWfYrww">
+                                </form>
+                            
+                            {% endif %}
+                            <div style="float:left; font-size: 13px;"><i>Publi&eacute; le</i> {{ thematique.datepublication|date('M j, Y') }}</div>                    
+                            <div style="float:right; font-size: 13px;"> <span class="fa fa-comment"></span>({{thematique.contribution|length}})</div> 
+                             
+                            </div>
+                      </div>
+                        {% set i = i + 1 %}
+                        {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+$( document ).ready(function() {
+
+   $('#login').hide();
+   $('#register').hide();
+   console.log(document.forms[0].style.display );
+   console.log(document.forms[1].style.display );
+   
+});
+$('.connect').on('click',function(){
+
+   $('#login').toggle();
+   $('#register').hide();
+})
+
+$('.creer').on('click',function(){
+    
+   $('#register').toggle();
+   $('#login').hide();
+   
+})
+$('.contrib').on('click',function(){
+    
+   $('#contribution').toggle();
+    
+   
+})
+
+function soumission(element) {
+
+
+   var form = $(element).closest("form");
+  //console.log( $(this).find('#appbundle_contributions_theme').val()); 
+  //console.log( $("#appbundle_contributions_theme")); 
+  //const FD = new FormData(this);
+  
+  
+  var formdata = {
+    
+      theme: form.find("#appbundle_contributions_theme").val(),
+      contributeur: form.find("#appbundle_contributions_contributeur").val(),
+      contributions: form.find("#appbundle_contributions_contributions").val(),
+      visuel: form.find("#appbundle_contributions_visuel").val(),
+      date: form.find("#appbundle_contributions_date").val(),
+      enable: form.find("#appbundle_contributions_enable").val(),
+      
+    }; 
+    form.find("#message").html("Votre contribution a ete ajoutee. Elle est en attente de validation par un administrateur").show();
+     
+    $.ajax({
+      type: "POST",
+      url: '{{ path('forum') }}',
+      data: formdata,
+      dataType: "json",
+      encode: true,
+    }).done(function (data) {
+
+ 
+  
+    });
+   form.find("#appbundle_contributions_contributions").val(""); 
+    setTimeout(function () { location.reload(true); }, 10000);
+    event.preventDefault();
+
+}
+
+</script>
+{% endblock %}

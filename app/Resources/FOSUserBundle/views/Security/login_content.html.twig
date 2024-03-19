@@ -1,0 +1,51 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6" style="padding: 35px; border: solid 1px #f9ba0a; border-radius: 15px; margin-bottom: 150px;">
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+        <h2 class="text-center"> Login </h2>
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% endif %}
+            <div class="col-md-12 form-group">
+                <label for="username">{{ 'Nom d\'utilisateur'|trans }}</label>
+                <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+
+            </div>
+            <div class="col-md-12 form-group">
+                <label for="password">{{ 'Password'|trans }}</label>
+                <input type="password" class="form-control" id="password" name="_password" required="required" autocomplete="current-password" />
+
+            </div>
+            <div class="col-md-12 form-group">
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                <label for="remember_me">{{ 'Se souvenir de moi'|trans }}</label>
+
+            </div>
+            <div class="col-md-12 form-group">
+                <input class="btn btn-success" type="submit" id="_submit" name="_submit" value="{{ 'Connexion'|trans }}" />
+       
+            </div>
+
+            <div class="col-md-12 form-group">
+                <a href="{{ path('homepage')}}">Retour à la page d'accueil</a>
+            </div>
+            <div class="col-md-12 form-group">
+                <a href="{{ path('fos_user_registration_register') }}">Pas encore de compte ? Cre&eacute;r votre compte !</a>
+            </div>
+         
+       </form>
+        </div>
+        <div class="col-md-3">
+        </div>
+
+
+
+    </div>
+</div>

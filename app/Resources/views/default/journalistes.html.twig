@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<center>
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mt-2">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#resultat3"><h4 class="m-0 text-uppercase font-weight-bold">TCHAD</h4></button>
+                        <img src="{{ asset('img/Tchad.png')}}" style="width:40px; height:30px;">
+                    </div>
+                    <div id="resultat3" class="collapse">
+                    <div class="col-md-12 mt-2"> 
+                    <div class="col-md-12 mt-1" style="background-color:white" >
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>{% trans into app.request.locale %}Nom du journaliste{% endtrans %}</th>
+                                <th>{% trans into app.request.locale %}Pays{% endtrans %}</th>
+                                <th>{% trans into app.request.locale %}Radio{% endtrans %}</th>
+                            </tr>
+                        </thead>
+                    {% for journaliste in journalistes %}
+                    {% if journaliste.pays == 'TCHAD' %}
+                       
+                       <tr>
+                            <td>{{journaliste.id}} </td>
+                            <td>{{journaliste.nom}} </td>
+                            <td>{{journaliste.pays}} </td>
+                            <td>{{journaliste.radio}}</td>
+                       </tr>
+                        
+                        {% endif %}
+                        {% endfor %}
+                    </table>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+</div>
+<div class="container" align="center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mt-2">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#resultat2"><h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}Cameroun{% endtrans %}</h4></button>
+                        <img src="{{ asset('img/Cameroun.jpg')}}" style="width:40px; height:30px;">
+                    </div>
+                    <div id="resultat2" class="collapse">
+                    <div class="col-md-12 mt-2"> 
+                    <div class="col-md-12 mt-1" style="background-color:white" >
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>{% trans into app.request.locale %}Nom du journaliste{% endtrans %}</th>
+                                <th>{% trans into app.request.locale %}Pays{% endtrans %}</th>
+                                <th>{% trans into app.request.locale %}Radio{% endtrans %}</th>
+                            </tr>
+                        </thead>
+                    {% for journaliste in journalistes %}
+                    {% if journaliste.pays == 'Cameroun' %}
+                       
+                       <tr>
+                            <td>{{journaliste.id}} </td>
+                            <td>{{journaliste.nom}} </td>
+                            <td>{{journaliste.pays}} </td>
+                            <td>{{journaliste.radio}}</td>
+                       </tr>
+                        
+                        {% endif %}
+                        {% endfor %}
+                    </table>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+</div>
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mt-2">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#resultat1"><h4 class="m-0 text-uppercase font-weight-bold">RCA</h4></button>
+                        <img src="{{ asset('img/RCA.jpg')}}" style="width:40px; height:30px;">
+                    </div>
+                    <div id="resultat1" class="collapse">
+                    <div class="col-md-12 mt-2"> 
+                    <div class="col-md-12 mt-1" style="background-color:white" >
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>{% trans into app.request.locale %}Nom du journaliste{% endtrans %}</th>
+                                <th>{% trans into app.request.locale %}Pays{% endtrans %}</th>
+                                <th>{% trans into app.request.locale %}Radio{% endtrans %}</th>
+                            </tr>
+                        </thead>
+                    {% for journaliste in journalistes %}
+                    {% if journaliste.pays == 'RCA' %}
+                       
+                       <tr>
+                            <td>{{journaliste.id}} </td>
+                            <td>{{journaliste.nom}} </td>
+                            <td>{{journaliste.pays}} </td>
+                            <td>{{journaliste.radio}}</td>
+                       </tr>
+                        
+                        {% endif %}
+                        {% endfor %}
+                    </table>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+</div>
+ </center>
+    
+{% endblock %}

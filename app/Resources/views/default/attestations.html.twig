@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mt-2">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Mes attestations</h4>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="row">
+                            <p>Listes des attestatios que vous eu au cours des formations organisées par le JCAC
+                        </div>
+                        
+                        <div class="row">
+                        <ol>
+                        {% for attestation in user.attestations %}
+                       
+                          <div class="col-md-4">
+                          <img src="{{asset('uploads\\')}}{{attestation|lower}}" download>{{attestation|lower}}
+                          </div>
+              
+                    
+                        {% endfor %}
+                        </ol>
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="col-md-12 text-center mt-2 mb-2">
+                                        <a class="btn btn-info accordion-toggle " data-toggle="collapse" data-parent="#accordion" href="#souscrire">souscrivez pour recevoir les notifications sur les annonces <span class="fa fa-chevron-down"></span></a>  
+                                    </div>
+                                    <div id="souscrire" class="panel-collapse collapse in text-justify">
+                                        <div class="bg-white text-center border border-top-0 p-3">
+                                            <p>Précisez votre adresse E-mail</p>
+                                            <div class="input-group mb-2" style="width: 100%;">
+                                                <input type="text" class="form-control form-control-lg" placeholder="Your Email">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary font-weight-bold px-3">Souscrire</button>
+                                                </div>
+                                            </div>
+                                            <small>Recevez les opportunités et les informations à propos du réseau</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                
+                        
+                    </div>    
+
+	
+
+{% endblock %}

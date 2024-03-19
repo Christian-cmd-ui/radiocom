@@ -1,0 +1,40 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Détails sur la Contribution</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contribution.id }}</td>
+            </tr>
+            <tr>
+                <th>Contributeur</th>
+                <td>{{ contribution.contributeur }}</td>
+            </tr>
+            <tr>
+                <th>Contributions</th>
+                <td>{{ contribution.contributions}}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if contribution.date %}{{ contribution.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contributions_index') }}">retourner la liste des contributions</a>
+        </li>
+        <li>
+            <a href="{{ path('contributions_edit', { 'id': contribution.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

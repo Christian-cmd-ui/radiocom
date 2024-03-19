@@ -1,0 +1,422 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+    <!-- Main News Slider Start -->
+    <div id="demo" class="container carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img  src="{{ asset("img/RCA travaux pratiques (4).jpeg") }}" alt="Los Angeles" style="width:100%">
+      <div class="carousel-caption">
+        <h3 class="animate__animated animate__fadeInLeft wow">{% trans into app.request.locale %}Des journalistes au service de la communaut&eacute;, notre r&eacute;seau, notre voix{% endtrans %}</h3>
+        <a  class="btn btn-success animate__animated animate__fadeInUp wow" href="{{ path('historique') }}" >{% trans into app.request.locale %}Lire &agrave; propos{% endtrans %}</a>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img  src="{{ asset("img/imageR2.jpg") }}" alt="Chicago" style="width:100%">
+      <div class="carousel-caption">
+        <h3  class="animate__animated animate__fadeInLeft wow">{% trans into app.request.locale %}La formation continue{% endtrans %} : {% trans into app.request.locale %}une priorit&eacute; du r&eacute;seau{% endtrans %}</h3>
+        <a  class="btn btn-success animate__animated animate__fadeInUp wow" href="{{ path('activites') }}" >{% trans into app.request.locale %}Voir les formations en cours{% endtrans %}</a>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset("img/reseau2.jpeg") }}" alt="New York" style="width:100%">
+      <div class="carousel-caption">
+        <h3  class="animate__animated animate__fadeInLeft wow">{% trans into app.request.locale %}Un espace d'&eacute;change entre journalistes communauataires{% endtrans %}</h3>
+        <a class="btn btn-success animate__animated animate__fadeInUp wow" href="{{ path('forum') }}" >{% trans into app.request.locale %}Voir le forum{% endtrans %} !</a>
+      </div>   
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+   {#  
+    <div class="modal show animate__animated animate__fadeInDown wow" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content ">
+                <div class="modal-header d-flex">
+                    <div class="ml-auto">
+                        <img src="{{asset('img/oif.png')}}" alt="Logo 1" class="logo1 img-fluid">
+                        <img src="{{asset('img/cecosda.png')}}" alt="Logo 2" class="logo img-fluid">
+                    </div>
+                    <!--<h5 class="modal-title"></h5>-->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <p><h4><b>Formation des journalistes communautaires sur les techniques de verification des faits du 26 au 27 Septembre 2023</b></h4></p>
+                    <a href="https://forms.gle/oWHtHPKhbjVm2h5ZA" target="_blank">cliquer ici pour s'enregistrer</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div> #}
+   {#  
+    <div class="container-fluid">
+        <div class="row mt-2">
+                
+                    <div class="col-md-8">
+                        <div class="section-title">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Objectif du Réseau JCAC</h4>
+                        </div>
+                            <h5 style="padding: 10px;" class="text-justify">Le réseau JCAC a pour principal objectif de valoriser la pratique du journalisme
+                            communautaire, assurer la formation continue de ses membres. 
+                            </h5>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="section-title">
+                            <h4 class="m-0 text-uppercase font-weight-bold">ANNONCES</h4>
+                        </div>
+                    </div>             
+                
+        </div>           
+        
+    </div> #}
+    <!-- Main News Slider End -->
+
+
+    <!-- Breaking News Start -->
+    {# <div class="container-fluid bg-dark py-3 mb-3">
+        <div class="container">
+            <div class="row align-items-center bg-dark">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                        <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">News</div>
+                        <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
+                            style="width: calc(100% - 170px); padding-right: 90px;">
+                            <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">Formations de journalistes des radios communautaires de la sous région sur les techniques de Fact-checking</a></div>
+                            <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">Formations de 30 journalistes des radios communautaires sur la communication en tant de crise sanitaire et de COVID-19</a></div>
+                            {# <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt, sed faucibus nisl sodales</a></div> #}
+                        {#</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> #}
+    <!-- Breaking News End -->
+
+
+    <!-- Featured News Slider Start -->
+    {# <div class="container-fluid pt-5 mb-3">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="m-0 text-uppercase font-weight-bold">Actualité du réseau</h4>
+            </div> #}
+           {#  <div class="row">
+                <div class="col-md-4">
+                <h4 class="titre">Formation sur le Digital</h4>
+                <img src="{{asset('img/tchad-formation-unesco-pidc-cecosda.jpg')}}" style="width:100%">
+                <p style>Le CECOSDA avec l'appui PIDC/UNESCO  forme 30 journalistes communautaires</p>
+                </div>
+                <div class="col-md-4">
+                <h4 class="titre">Formation sur le Digital</h4>
+                <img src="{{asset('img/tchad-formation-unesco-pidc-cecosda.jpg')}}" style="width:100%">
+                <p style>Le CECOSDA avec l'appui PIDC/UNESCO  forme 30 journalistes communautaires</p>
+                </div>
+                <div class="col-md-4">
+                <h4 class="titre">Formation sur le Digital</h4>
+                <img src="{{asset('img/tchad-formation-unesco-pidc-cecosda.jpg')}}" style="width:100%">
+                <p style>Le CECOSDA avec l'appui PIDC/UNESCO  forme 30 journalistes communautaires</p>
+                </div>
+                
+            </div>
+            <div class="section-title">
+                <h4 class="m-0 text-uppercase font-weight-bold">Articles</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                <h4 class="titre">Formation sur le Digital</h4>
+                <img src="{{asset('img/tchad-formation-unesco-pidc-cecosda.jpg')}}" style="width:100%">
+                <p style>Le CECOSDA avec l'appui PIDC/UNESCO  forme 30 journalistes communautaires</p>
+                </div>
+                <div class="col-md-4">
+                <h4 class="titre">Formation sur le Digital</h4>
+                <img src="{{asset('img/tchad-formation-unesco-pidc-cecosda.jpg')}}" style="width:100%">
+                <p style>Le CECOSDA avec l'appui PIDC/UNESCO  forme 30 journalistes communautaires</p>
+                </div>
+                <div class="col-md-4">
+                <h4 class="titre">Formation sur le Digital</h4>
+                <img src="{{asset('img/tchad-formation-unesco-pidc-cecosda.jpg')}}" style="width:100%">
+                <p style>Le CECOSDA avec l'appui PIDC/UNESCO  forme 30 journalistes communautaires</p>
+                </div>
+                
+            </div> #}
+            {# <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+                <div class="position-relative overflow-hidden"  style="height: 300px; width:100%">
+                    <img class="img-fluid h-100" src="{{ asset('img/news-700x435-1.jpg')}}" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="">Formation</a>
+                            <a class="text-white" href=""><small>Fev 22 , 2022</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white ont-weight-semi-bold" href="">Lancement du réseau des radios communautaires</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px; width:100%">
+                    <img class="img-fluid h-100" src="{{ asset('img/news-700x435-2.jpg')}}" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">Formation</a>
+                            <a class="text-white" href=""><small>Fev 22 , 2022</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white ont-weight-semi-bold" href="">Formation sur l'utilisation du digital par les radios communautaires</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px; width:100%">
+                    <img class="img-fluid h-100" src="{{ asset('img/news-700x435-3.jpg')}}" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="">Formation</a>
+                            <a class="text-white" href=""><small>Fev 22 , 2022</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white font-weight-semi-bold" href="">Formations des journalistes communautaires sur le digital</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px; width:100%">
+                    <img class="img-fluid h-100" src="{{ asset('img/news-700x435-4.jpg')}}" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="">Formation</a>
+                            <a class="text-white" href=""><small>Fev 22 , 2022</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white font-weight-semi-bold" href="">Formation sur la continuité de service en temps de crise</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 300px; width:100%">
+                    <img class="img-fluid h-100" src="{{ asset('img/news-700x435-5.jpg')}}" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="">Formation</a>
+                            <a class="text-white" href=""><small>Fev 22 , 2022</small></a>
+                        </div>
+                        <a class="h6 m-0 text-white font-weight-semi-bold" href="">Formations des journalistes communautaires sur le digital</a>
+                    </div>
+                </div>
+            </div> #}
+     {#    </div>
+    </div> #}
+    <!-- Featured News Slider End -->
+ <div class="container-fluid pt-5 mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}Vous &ecirc;tes bailleur de fonds{% endtrans %} ? </h4>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="row">
+                            <p>{% trans into app.request.locale %} Vous pouvez{% endtrans %} :
+                        
+                            <ul>
+                            <li>{% trans into app.request.locale %}financer des ateliers de formations pour les membres{% endtrans %};</li>
+                            <li>{% trans into app.request.locale %}financer des voyages pour la participation des membres à des séminaires{% endtrans %};</li>
+                            <li>{% trans into app.request.locale %}Aider les radios communautaires avec des équipements, l’appui technique ou financier{% endtrans %};</li>
+                            <li>{% trans into app.request.locale %}Partager avec le réseau des opportunités ou des informations pertinentes pour les journalistes et radios communautaires{% endtrans %};</li>
+                            </ul>
+                            {% trans into app.request.locale %}Pour nous soutenir, écrivez au secrétariat du réseau{% endtrans %} <a href="mailto:reseaujcac@gmail.com" style="background-color:#FFF; margin-left:2px"> reseaujcac@gmail.com</a>
+                            </p>
+                        </div>  
+                    </div>    
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}Vous &ecirc;tes journaliste communautaire{% endtrans %} ?</h4>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="row">
+                            <p>
+                            {% trans into app.request.locale %}Pour rejoindre le réseau JCAC en tant que journaliste communautaire il faut travailler pour une radio rurale et vivre dans la communauté rurale, localité de la radio. En d’autres termes, chaque journaliste ou animateur doit être  rattaché à une radio communautaire{% endtrans %} .
+                            </p>
+                            <p class="text-left">
+                            <a class="btn btn-success" href="{{ path('devenirmembre')}}" >{% trans into app.request.locale %}Rejoingnez notre r&eacute;seau{% endtrans %}</a>
+                         </p>
+                        </div>  
+                    </div>    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- News With Sidebar Start -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                
+                
+                <div class="col-lg-8">
+                
+                  <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                        </div>
+                        <div class="bg-white text-center border border-top-0 p-3">
+                          {% for msg in app.session.flashBag.get('newsletter') %}
+                        <div class="alert alert-success">
+                            {{ msg }}
+                        </div>
+                    {% endfor %}
+                        {{ form_start(form) }}
+                                            <p>{{ form_label(form.destinataire, "Pour recevoir nos newsletters, remplissez votre adresse E-mail") }}</p>
+                                            <div class="input-group mb-2" style="width: 100%;">
+                            {% if app.request.attributes.get('_locale') == 'fr'%}            
+                                {{ form_widget(form.destinataire,{'attr':{'placeholder' : 'Votre adresse e-mail','class': 'form-control', 'required': 'required'}}) }}
+                            {% else %}
+                                {{ form_widget(form.destinataire,{'attr':{'placeholder' : 'Your e-mail address','class': 'form-control', 'required': 'required'}}) }}
+                            {% endif %}
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary font-weight-bold px-3">{% trans into app.request.locale %}Souscrire{% endtrans %}</button>
+                                                </div>
+                                            </div>
+                                            <small>{% trans into app.request.locale %}Recevez les opportunités et les informations à propos du réseau{% endtrans %}</small>
+                        </div>
+                          {{ form_end(form) }}
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Social Follow Start -->
+                    {# <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Suivez nous</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-3">
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
+                                <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Fans</span>
+                            </a>
+                       
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
+                                <i class="fab fa-youtube text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Subscribers</span>
+                            </a>
+                        
+                        </div>
+                    </div> #}
+                    <!-- Social Follow End -->
+
+                    <!-- Ads Start -->
+  {#                   <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Advertisement</h4>
+                        </div>
+                        <div class="bg-white text-center border border-top-0 p-3">
+                            <a href=""><img class="img-fluid" src="{{ asset('img/news-800x500-2.jpg')}}" alt=""></a>
+                        </div>
+                    </div> #}
+                    <!-- Ads End -->
+
+                    <!-- Popular News Start -->
+                    {# <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-3">
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="{{ asset('img/news-110x110-1.jpg')}}" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="{{ asset('img/news-110x110-2.jpg')}}" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="{{ asset('img/news-110x110-3.jpg')}}" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="{{ asset('img/news-110x110-4.jpg')}}" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="{{ asset('img/news-110x110-5.jpg')}}" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> #}
+                    <!-- Popular News End -->
+
+                    <!-- Newsletter Start -->
+                  
+                    <!-- Newsletter End -->
+
+                    <!-- Tags Start -->
+                    {# <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-3">
+                            <div class="d-flex flex-wrap m-n1">
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                            </div>
+                        </div>
+                    </div> #}
+                    <!-- Tags End -->
+                </div>
+            </div>
+        </div>
+       
+
+    </div>
+    <!-- News With Sidebar End -->
+
+
+  
+
+
+{% endblock %}

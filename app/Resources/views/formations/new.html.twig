@@ -1,0 +1,78 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <header class="panel-heading">
+                    <h1 class="panel-title">Enregistrement d'une nouvelle Formation</h1>
+                </header>
+                <div class="panel-body purple" style="margin-bottom: 8%; padding:3px">
+                    {{ form_errors(form) }}
+                    {{ form_start(form, {'method': 'post', 'action': path('formations_new'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.libelle, "Nom de la formation") }}
+                                {{ form_widget(form.libelle,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.objectifs, "Objectifs") }}
+                                {{ form_widget(form.objectifs,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.duree, "Durée de la formation") }}
+                                {{ form_widget(form.duree,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.modaliteparticipation, "Modalités de participation") }}
+                                {{ form_widget(form.modaliteparticipation,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.type, "Type de formation (en ligne etc..)") }}
+                                {{ form_widget(form.type,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.nombreplace, "Nombre de place") }}
+                                {{ form_widget(form.nombreplace,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.lieu, "Lieu de la formation") }}
+                                {{ form_widget(form.lieu,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <table class="pull-right mt-3">
+                        <tr>
+                            <td>
+                                <input class="ladda-button btn-custom ladda-button-demo btn btn-primary" type="submit" value="Enregistrer" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('formations_index', { type : 1}) }}">Retour à la liste des formations
+                                </a>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                    {{ form_end(form) }}
+
+                </div>
+    <ul>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('formations_index') }}">Retour à la liste des formations</a>
+        </li>
+    </ul>
+{% endblock %}

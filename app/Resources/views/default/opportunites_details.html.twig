@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+    <h1 class="text-center mb-2 mt-5">Opportunit&eacute;s {{ evenement.id }} </h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                
+                <td>{{ evenement.image }}</td>
+            </tr>
+            <tr>
+                <td><b>{{ evenement.titre }}</b></td>
+            </tr>
+            <tr>
+                <td>{{ evenement.details }}</td>
+            </tr>
+            <tr>
+                <td>{{ evenement.lieu }}</td>
+            </tr>
+            <tr>
+                <td>{% if evenement.date %}Date de debut : {{ evenement.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('opportunites') }}">Revenir a la liste des opportunites</a>
+        </li>
+    </ul>
+{% endblock %}

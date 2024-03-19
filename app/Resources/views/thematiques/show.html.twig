@@ -1,0 +1,40 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Détails sur la Thematique</h1>
+
+    <table  class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ thematique.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ thematique.titre }}</td>
+            </tr>
+            <tr>
+                <th>Delais</th>
+                <td>{{ thematique.delais }}</td>
+            </tr>
+            <tr>
+                <th>Datepublication</th>
+                <td>{% if thematique.datepublication %}{{ thematique.datepublication|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('thematiques_index') }}">Retourner à la liste des thématiques</a>
+        </li>
+        <li>
+            <a href="{{ path('thematiques_edit', { 'id': thematique.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

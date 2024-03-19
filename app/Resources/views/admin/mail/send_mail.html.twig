@@ -1,0 +1,63 @@
+{% extends 'base_admin.html.twig' %}
+{% block title %}{{ parent() }}Envoi d'un e-email{% endblock %}
+{% block content %}
+    {% block classe %}{% endblock %}
+    <div class="col-md-12" style="margin-top: 37px;padding: 10px;">
+        <h3 class="text-center" style="
+		    background: white;
+		    padding: 9px;
+		    color: black;
+		">Rediger un mail</h3>
+    </div>
+    <div class="col-md-12">
+        {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        {{ form_label(form.categorieDestinataire) }} <span class="text-danger">*</span><br>
+                        {{ form_widget(form.categorieDestinataire) }}
+                        {{ form_errors(form.categorieDestinataire) }}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        {{ form_label(form.emailDestinataire) }} <span class="text-danger">*</span>
+                        {{ form_widget(form.emailDestinataire) }}
+                        {{ form_errors(form.emailDestinataire) }}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        {{ form_label(form.objectMail) }} <span class="text-danger">*</span>
+                        {{ form_widget(form.objectMail) }}
+                        {{ form_errors(form.objectMail) }}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        {{ form_label(form.imageFile) }} <span class="text-danger">*</span>
+                        {{ form_widget(form.imageFile) }}
+                        {{ form_errors(form.imageFile) }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        {{ form_label(form.content) }} <span class="text-danger">*</span>
+                        {{ form_widget(form.content) }}
+                        {{ form_errors(form.content) }}
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-12">
+                <button style="font-size:20px; background: #004a00" type="submit" name="submit" class="btn btn-primary"><i class="fa fa-check"></i> Envoyer</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+    <script type="text/javascript">
+        CKEDITOR.replace( 'app_bundle_emails_content', { height: 300 } );
+    </script>
+
+{% endblock %}

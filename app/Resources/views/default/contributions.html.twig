@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+    <h1 class="text-center mb-2 mt-5">Ajouter une nouvelle Contribution</h1>
+
+    {{ form_start(form) }}
+        <div class="row ">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form_label(form.theme, "Theme") }}
+                                {{ form_widget(form.theme,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form_label(form.contributeur, "Contributeur") }}
+                                {{ form_widget(form.contributeur,{'attr':{'class':'form-control', 'required': 'required', 'readonly':'readonly'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form_label(form.contributions, "Contributions") }}
+                                {{ form_widget(form.contributions,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form_label(form.visuel, "Insérer votre image") }}
+                                {{ form_widget(form.visuel,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form_label(form.date, "Date") }}
+                                {{ form_widget(form.date,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                      
+                    </div>
+        <input type="submit" value="Ajouter" />
+    {{ form_end(form) }}
+
+  
+    
+    </div>
+{% endblock %}

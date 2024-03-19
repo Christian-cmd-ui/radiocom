@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mt-2">
+                        <h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}Télécharger votre attestation ici{% endtrans %}</h4>
+                    </div>
+            </div>
+</div>
+ 
+{% if user.username == 'euraclite' %}
+    <embed src="{{ asset('attestation/Attestation1.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Princia'%}
+<embed src="{{ asset('attestation/Yalla_Princia_Florence.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Evambe'%}
+<embed src="{{ asset('attestation/Evambe_Thompson.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/Ewambe_Thompson2.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == '7528'%}
+<embed src="{{ asset('attestation/EnglishRIBAR_THIBAUT.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Fabrice Beloko'%}
+<embed src="{{ asset('attestation/FABRICE_BELOKO1.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/FABRICE_BELOKO.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'RCN'%}
+<embed src="{{ asset('attestation/CHINTOUO_ANNE_MARIE_BIRKISS.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/Chintouo_Anne_marie_Birkiss.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'matys2035'%}
+<embed src="{{ asset('attestation/DOUNTIO_MBOGNI FRANK_STEVE.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/DOUNTIO_MBOGNI FRANK_STEVE1.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Ali'%}
+<embed src="{{ asset('attestation/Ali_Daoudou1.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/Ali_Daoudou.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Aziz'%}
+<embed src="{{ asset('attestation/AZIZ_MOUSTAPHA.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Brahim'%}
+<embed src="{{ asset('attestation/BRAHIM_TOM_HABIB1.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/BRAHIM_TOM_HABIB.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Christelle'%}
+<embed src="{{ asset('attestation/CHRISTELLE_NAMIA_MENODJI.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Darem'%}
+<embed src="{{ asset('DAREM _PEPIN_STEVE.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Marnasse'%}
+<embed src="{{ asset('attestation/DJIKOLOUM_MANASSE.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Djimtabe'%}
+<embed src="{{ asset('attestation/Djimtabe_Djouwaikina.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Français'%}
+<embed src="{{ asset('attestation/français_Yondo_Abdonl.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Gabriel'%}
+<embed src="{{ asset('GABRIEL_TRESOR_YAENIMATCHI.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Abdel'%}
+<embed src="{{ asset('attestation/Kandas_Abdel _Djalil.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Kebuh'%}
+<embed src="{{ asset('attestation/Kebuh_Willing_Teeh1.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/Kebuh_Willing_Teeh.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Félicienne'%}
+<embed src="{{ asset('attestation/KEGNI_KAMGANG_FELICIENNE1.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/KEGNI_KAMGANG_FELICIENNE.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Eric'%}
+<embed src="{{ asset('attestation/Mbarbe_Kombele_Eric1.pdf') }}" width="100%" height="600px" type="application/pdf">
+<embed src="{{ asset('attestation/Mbarbe_Kombele_Eric.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Felix'%}
+<embed src="{{ asset('attestation/MenaiFelix_Yengo.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Namia'%}
+<embed src="{{ asset('attestation/Menodji_Namia(2).pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Miriam'%}
+<embed src="{{ asset('attestation/MIRIAM_POSITIVE.pdf') }}" width="100%" height="600px" type="application/pdf">
+{% elseif user.username == 'Mone'%}
+<embed src="{{ asset('MONE_LAOTAYE_MARIE_ROSE(2).pdf') }}" width="100%" height="600px" type="application/pdf">
+{% else %}
+<h1>loggez-vous</h1>
+{% endif %}
+
+{% endblock %}

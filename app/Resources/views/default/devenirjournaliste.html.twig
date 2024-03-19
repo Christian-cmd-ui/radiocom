@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mt-2">
+                        <h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}Devenir journaliste membre{% endtrans %}</h4>
+                    </div>
+                    {% for msg in app.session.flashBag.get('journaliste') %}
+                        <div class="alert alert-success">
+                            {{ msg }}
+                        </div>
+                    {% endfor %}
+                <div class="panel-body purple" style="margin-bottom: 8%; padding:3px">
+                    {{ form_errors(form) }}
+                    {{ form_start(form, {'method': 'post', 'action': path('ajouterjournaliste'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.nom, "Nom(s) et prénom(s)") }}
+                                {{ form_widget(form.nom,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.email) }}
+                                {{ form_widget(form.email,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.phone) }}
+                                {{ form_widget(form.phone,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.ville) }}
+                                {{ form_widget(form.ville,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.pays, "Pays") }}
+                                {{ form_widget(form.pays,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.cni) }}
+                                {{ form_widget(form.cni,{'attr':{'class':'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.recommandations, "Lettre de recommandation") }}
+                                {{ form_widget(form.recommandations,{'attr':{'class':'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.langues) }}
+                                {{ form_widget(form.langues,{'attr':{'class':'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ form_label(form.radio) }}
+                                {{ form_widget(form.radio,{'attr':{'class':'form-control', 'required': 'required'}}) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                            <p>votre radio n'est pas dans la liste ? <a class="btn btn-danger" href="{{path('ajouterradio')}}">vous pouvez l'ajouter ici</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                            <p><input class=" btn btn-success" style="margin-top:20px" type="submit" value="Finalisez votre enregistrement" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="pull-right mt-3">
+                        <tr>
+                            <td>
+                                
+                            </td>
+                        
+                        </tr>
+                    </table>
+                    {{ form_end(form) }}
+
+                </div>
+            </div>
+       </div>
+    </div>
+
+ 
+{% endblock %}
+

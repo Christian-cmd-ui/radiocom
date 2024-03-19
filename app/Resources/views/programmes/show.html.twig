@@ -1,0 +1,40 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block content %}
+    <h1>Détails sur le programes</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ programme.id }}</td>
+            </tr>
+            <tr>
+                <th>Heures</th>
+                <td>{{ programme.heures }}</td>
+            </tr>
+            <tr>
+                <th>Nom du programme</th>
+                <td>{{ programme.nom }}</td>
+            </tr>
+            <tr>
+                <th>Emission</th>
+                <td>{{ programme.emission }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('programmes_index') }}">Retourner à la liste des programmes</a>
+        </li>
+        <li>
+            <a class="btn btn-dark btn-custom waves-effect waves-light" href="{{ path('programmes_edit', { 'id': programme.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title mt-2">
+                        <h4 class="m-0 text-uppercase font-weight-bold">{% trans into app.request.locale %}Opportunités{% endtrans %}</h4>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="row">
+                            <p>{% trans into app.request.locale %}Recevez des annonces sur les opportunités de formation, les bourses, financements, et autres appuis pour les journalistes et les radios communautaires.{% endtrans %}
+                            
+
+                        </div>
+                        
+                        <div class="row"> <ol>
+                        {% for evenement in evenements %}
+                       
+                        
+                        <li><a style="color: #004f03;font-weight: 600;" href="{{ path('opportunites_details', { 'id': evenement.id }) }}">{{ evenement.titre }}</a>
+                        
+                <br> Lieu de formation : {{ evenement.lieu}}
+                {% if evenement.datefin %}<br> Date de fin : <b>{{ evenement.datedebut|date('d-m-Y') }}</b>
+                <br> Date de d&eacute;but :<b>{{ evenement.datefin|date('d-m-Y') }}</b>
+                
+	                {% if evenement.datefin|date('Y-m-d') > "now"|date('Y-m-d') %}<br> Etat : <b style="color:green">en cours </b>
+	                {% else %}<br> Etat : <b style="color:red">Clotur&eacute;</b>
+	                
+	                {% endif %}
+                {% endif %}
+                        </li>
+                    
+        {% endfor %}</ol>
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="col-md-12 text-center mt-2 mb-2">
+                                        <a class="btn btn-info accordion-toggle " data-toggle="collapse" data-parent="#accordion" href="#souscrire">{% trans into app.request.locale %}souscrivez pour recevoir les notifications sur les annonces{% endtrans %} <span class="fa fa-chevron-down"></span></a>  
+                                    </div>
+                                    <div id="souscrire" class="panel-collapse collapse in text-justify">
+                                        <div class="bg-white text-center border border-top-0 p-3">
+                                            <p>{% trans into app.request.locale %}Précisez votre adresse E-mail{% endtrans %}</p>
+                                            <div class="input-group mb-2" style="width: 100%;">
+                                                <input type="text" class="form-control form-control-lg" placeholder="Your Email">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary font-weight-bold px-3">{% trans into app.request.locale %}Souscrire{% endtrans %}</button>
+                                                </div>
+                                            </div>
+                                            <small>{% trans into app.request.locale %}Recevez les opportunités et les informations à propos du réseau{% endtrans %}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                
+                        
+                    </div>    
+
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

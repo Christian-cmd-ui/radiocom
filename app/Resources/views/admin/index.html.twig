@@ -1,0 +1,88 @@
+{% extends 'base_admin.html.twig' %}
+{% block content %}
+
+            
+
+
+{# 
+            <!-- Sales Chart Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Worldwide Sales</h6>
+                                <a href="">Show All</a>
+                            </div>
+                            <canvas id="worldwide-sales"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Salse & Revenue</h6>
+                                <a href="">Show All</a>
+                            </div>
+                            <canvas id="salse-revenue"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sales Chart End --> 
+#}
+
+
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light text-center rounded p-4">
+                   <div class="row">
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                            <div class="dash-widget">
+                                <span class="dash-widget-bg2"><i class="fa fa-users"></i></span>
+                                <div class="dash-widget-info text-right">
+                                    <h3>{{ journalistes }}</h3>
+                                    <span class="widget-title1">Journalistes <i class="fa fa-check" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                            <div class="dash-widget">
+                                <span class="dash-widget-bg1"><i class="fa fa-microphone"></i></span>
+                                <div class="dash-widget-info text-right">
+                                    <h3>{{ radios }}</h3>
+                                    <span class="widget-title1">Radios <i class="fa fa-check" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                            <div class="dash-widget">
+                                <span class="dash-widget-bg2"><i class="fa fa-money-check"></i></span>
+                                <div class="dash-widget-info text-right">
+                                    <h3>{{ donateurs }}</h3>
+                                    <span class="widget-title1">Donateurs <i class="fa fa-cash" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                            <div class="dash-widget">
+                                <span class="dash-widget-bg1"><i class="fa fa-school"></i></span>
+                                <div class="dash-widget-info text-right">
+                                    <h3>{{ formations }}</h3>
+                                    <span class="widget-title1">Formations <i class="fa fa-check" aria-hidden="true"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                   </div>
+                  
+                </div>
+            </div>
+            <!-- Recent Sales End -->
+
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-light text-center rounded p-4">
+                    
+                </div>
+            </div>
+            <!-- Recent Sales End -->
+            {% endblock %}
